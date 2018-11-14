@@ -1,0 +1,122 @@
+{% extends 'Teacher_View_Base_Layout.html' %}
+{% load static from staticfiles %}
+  {% block content %}        
+
+        <div class="container center">
+            <h3 class="">Welcome {{a_teacher.T_name}} !</h3>
+              <div class="row">
+
+                <a href="">
+                  <div class="col s12 l4">
+                    <div class="card  pink accent-3 hoverable">
+                      <div class="card-image">
+                        <img src="{% static 'Teacher/course.png' %}" alt="">
+                        <a href="" class="halfway-fab btn-floating red darken-1 pulse ">
+                            <i class="material-icons ">format_align_center</i>
+                        </a>
+                      </div>
+                        <div class="card-content">
+                          <p class="center">
+                                <h5 class="white-text">Course Contents</h5>
+                          </p>
+                        </div>
+                  </div>
+                  </div>
+                </a>
+
+              <a href="S_G_P.html" class="">
+                <div class="col s12 l4">
+                  <div class="card deep-purple lighten-1 hoverable">
+                    <div class="card-image">
+                      <img src="{% static 'Teacher/assignment.png' %}" alt="">
+                      <a href="" class="halfway-fab btn-floating red pulse">
+                          <i class="material-icons">edit</i>
+                      </a>
+                    </div>
+                      <div class="card-content">
+                        <p class="center">
+                              <h5 class="white-text">Set Grading Policy</h5>
+                        </p>
+                      </div>
+                </div>
+            </div>
+              </a>
+
+
+
+                <a href="" class="">
+                  <div class="col s12 l4">
+                    <div class="card  pink accent-3 hoverable">
+                      <div class="card-image">
+                        <img src="{% static 'Teacher/marks.jpg' %}" alt="">
+                        <a href="" class="halfway-fab btn-floating red darken-1 pulse ">
+                            <i class="material-icons ">edit</i>
+                        </a>
+                      </div>
+                        <div class="card-content">
+                          <p class="center">
+                                <h5 class="white-text">Enter Grades</h5>
+                          </p>
+                        </div>
+                  </div>
+                  </div>
+                </a>
+                <a href="" class="">
+                  <div class="col s12 l4">
+                    <div class="card deep-purple lighten-1 hoverable">
+                      <div class="card-image">
+                        <img src="{% static 'Teacher/Attendance.jpg' %}" alt="">
+                        <a href="" class="halfway-fab btn-floating red pulse">
+                            <i class="material-icons">edit</i>
+                        </a>
+                      </div>
+                        <div class="card-content">
+                          <p class="center">
+                                <h5 class="white-text">Attendance</h5>
+                          </p>
+                        </div>
+                  </div>
+              </div>
+                </a>
+
+                <a href="">
+                  <div class="col s12 l4">
+                    <div class="card  pink accent-3 hoverable">
+                      <div class="card-image">
+                        <img src="{% static 'Teacher/students.png' %}" alt="">
+                        <a href="" class="halfway-fab btn-floating red darken-1 pulse ">
+                            <i class="material-icons ">group</i>
+                        </a>
+                      </div>
+                        <div class="card-content">
+                          <p class="center">
+                                <h5 class="white-text">View Student Enrolled</h5>
+                          </p>
+                        </div>
+                  </div>
+                  </div>
+                </a>
+
+                <a href="">
+                  <div class="col s12 l4">
+                    <div class="card  deep-purple lighten-1 hoverable">
+                      <div class="card-image">
+                        <img src="{% static 'Teacher/discussion.jpg' %}" alt="">
+                        <a href="" class="halfway-fab btn-floating red darken-1 pulse ">
+                            <i class="material-icons ">insert_comment</i>
+                        </a>
+                      </div>
+                        <div class="card-content">
+                          <p class="center">
+                                <h5 class="white-text">Discussion Forum</h5>
+                          </p>
+                        </div>
+                  </div>
+                  </div>
+                </a>
+
+
+              </div>
+
+        </div>
+  {% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!--Import Google Icon Font-->
+           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <title>Admin View</title>
+    <style>
+     img{
+          height:200px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+          img{
+            height:500px;
+          }
+        }
+    </style>
+  </head>
+  <body class="">
+        <div class="navbar-fixed">  
+          <nav class="nav-wrapper green accent-3">
+            <div class="container">
+              <a href="" class = "brand-logo  ">ADMIN</a>
+              <a href="" class="sidenav-trigger" data-target="sidebar_id">
+                <i class="material-icons">menu</i>
+              </a>
+              <!--
+                  for small screens the nav icon vanishes and the li's appear
+             -->
+              <ul class ="right hide-on-med-and-down">
+               <li ><a href="#" class="btn-floating green darken-2"><i class="material-icons blue-text large">person</i></a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#" class ="btn amber lighten-1 waves-effect">Login/Logout</a></li>
+              </ul>
+
+              <ul class="sidenav grey lighten-1" id ="sidebar_id">
+                <li><a href="#" class="btn green accent-3"><i class="center material-icons blue-text large ">person</i></a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#" class ="btn amber lighten-1 waves-effect left">Login/Logout</a></li>
+              </ul>
+            </div>  
+          </nav>
+        </div>  
+
+        {% block content %}
+        {% endblock %}
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+        $(document).ready(function(){
+          $('.sidenav').sidenav();
+        })
+        </script>
+  </body>
+</html>
