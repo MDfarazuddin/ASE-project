@@ -6,6 +6,6 @@ class Teachers(models.Model):
 	T_name = models.CharField(max_length = 20)
 	T_course = models.CharField(max_length = 20,default="not assigned")
 	slug = models.SlugField()
-	T_email = models.EmailField(default="farazuddin.m17@iiits.in")
+	T_email = models.EmailField(default="farazuddin.m17@iiits.in",blank=True)
 	def __str__(self):
 		return self.T_name
