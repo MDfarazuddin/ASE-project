@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from Teacher.models import Teachers
 from Student.models import Students
+from django.core.mail import EmailMessage
 # Create your views here.
 
 def admin_home(request):
@@ -28,3 +29,16 @@ def student_list(request):
 	return render(request,'Admin/student_list.html',{"all_students":all_students	})
 	# return HttpResponse("dfjkhfjk")
 
+def make_email(request,slug):
+	a_teacher = Teachers.objects.get(slug=slug)
+	return render(request,"Admin/Admin_email.html",{"a_teacher":a_teacher})
+	# return HttpResponse(slug)
+
+
+def send_email(request):
+	email = request.POST['email']
+	subject = request.POST['subject']
+	body = request.POST['body']
+	email = EmailMessage(subject,body,to=[email])
+	email.send()
+	return render(request,"Admin/Admin_confirm.html")

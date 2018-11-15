@@ -11,4 +11,6 @@ urlpatterns = [
     path('all/teachers/',include('Teacher.urls')),
     path('all/students/',views.student_list,name="student_list"),
     path('all/students/',include('Student.urls')),
+    path('send-email/<slug:slug>',views.make_email,name="make_email"),
+    path('sent-email',views.send_email,name="send_email")
 ]
