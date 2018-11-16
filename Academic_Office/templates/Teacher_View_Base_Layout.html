@@ -2,20 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-
-    <!--Import Google Icon Font-->
-           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Teacher View</title>
     <style>
         img{
           height:200px;
         }
-
         @media only screen and (max-width: 1000px) {
           img{
             height:500px;
@@ -23,7 +16,7 @@
         }
     </style>
   </head>
-  <body class = "">
+  <body class = "grey lighten-2">
             <div class="navbar-fixed">
           <nav class="nav-wrapper red accent-3">
             <div class="container">
@@ -31,29 +24,38 @@
               <a href="" class="sidenav-trigger" data-target="sidebar_id">
                 <i class="material-icons">menu</i>
               </a>
-              <!--
-                  for small screens the nav icon vanishes and the li's appear
-             -->
              <ul class ="right hide-on-med-and-down">
                 <li ><a href="#" class="btn-floating red darken-4 waves-effect"><i class="material-icons blue-text large">person</i></a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">CONTACT</a></li>
                 <li><a href="#" class ="btn amber lighten-1 waves-effect">Login/Logout</a></li>
             </ul>
-
             </div>
           </nav>
         </div>
-        <ul class="sidenav grey lighten-1" id ="sidebar_id">
-          <li><a href="#" class="btn small red accent-3"><i class="center material-icons blue-text large">person</i></a></li>
-          <li><a href="#" class="">ABOUT</a></li>
-          <li><a href="#" class="">CONTACT</a></li>
-          <li><a href="#" class ="btn amber lighten-1 waves-effect left">Login/Logout</a></li>
-        </ul>
-      {% block content %}
-      {% endblock %}
+        <ul class="sidenav grey lighten-3" id ="sidebar_id">
+          <li><div class="user-view">
+            <div class="background">
+              <img src="images/office.jpg">
+            </div>
+            <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+            <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          </div></li>
+          <li><a href="#!"><i class="material-icons">home</i>Home</a></li>
+          <li><a href="#!">Contact</a></li>
+          <li><div class="divider"></div></li>
+          <li><a href="#!">About</a></li>
+          <li><a class="waves-effect" href="#!">Logout</a></li>
 
-  <footer class="page-footer red">
+                  </ul>
+      {% block content %}
+
+
+
+
+      {% endblock %}
+      <footer class="page-footer red">
                     <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -85,9 +87,7 @@
             </div>
           </div>
         </footer>
-
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-      <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script>
       $(document).ready(function(){

@@ -1,0 +1,66 @@
+{% extends 'Admin_View_Base_Layout.html' %}
+{% load static from staticfiles %}
+{% block content %}
+        <div class="container">
+      <h3>Please fill the details to add Student</h3>
+      <script>
+        function readURL(input) {
+          if (input.files) {
+            var reader = new FileReader();
+            reader.onload = function(pic) {
+              $("#passportpic")
+                .attr("src", pic.target.result)
+                .width(150)
+                .height(200);
+            };
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+      </script>
+      <br />
+      <div class="card hoverable grey lighten-3">
+          <br>
+          <div class="container">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate" />
+                <label for="icon_prefix">Name</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate" />
+                <label for="icon_telephone">Mobile</label>
+              </div>
+            </div>
+            <div class="row">
+                    <div class="input-field col s6">
+                            <i class="material-icons prefix">email</i>
+                            <input id="icon_email" type="email" class="validate">
+                            <label for="icon_email">Email</label>
+                          </div>
+                          <div class="input-field col s6">
+                                <i class="material-icons prefix">group</i>
+                                <input id="Rollnumber" type="number" class="validate"/>
+                                <label for="Rollnumber">Roll. Number</label>
+                              </div>      
+               </div><br>
+           <div class="row">
+            <div class="col s2">Passport Image:</div>   
+            <div class="col s3"><input class="waves-effect" type="file" onchange="readURL(this);" /></div>
+           </div>
+           <div class="row"><div class="col s6"><img id="passportpic" src="#" alt="your image" /></div></div>
+           <div class="row">
+           <div class="right">
+                <input class="btn btn-large" type="submit" value="Confirm and Add Student"> 
+            </div>
+           </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+                 
+{% endblock %}
