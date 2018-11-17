@@ -10,7 +10,7 @@
               <h4 class=>Teachers</h4>
             </li>
             {% for teacher in all_teachers %}
-              <li class="collection-item avatar">
+              <li class="collection-item avatar hoverable">
                 <a href="{{ teacher.slug  }}" class=""><i class="material-icons  circle blue">person</i></a>
                 <span class="title">{{teacher.T_name}}</span>
                 <p class="grey-text">{{teacher.T_id}}</p>
