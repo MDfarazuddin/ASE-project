@@ -5,7 +5,7 @@
         <form action="{% url 'send_email' %}" method="POST">
           {% csrf_token %}
             <h6>email:</h6>
-            <input type="Text" value="{{ a_teacher.T_email }}" name="email" >
+            <input type="Text" value="{{ a_request.T_email }}" name="email" >
             <h6>Subject:</h6>
             <input type="text" name="subject" value="">
             <h6>Body:</h6>

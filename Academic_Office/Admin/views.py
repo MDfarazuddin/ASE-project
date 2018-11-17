@@ -29,10 +29,15 @@ def student_list(request):
 	return render(request,'Admin/student_list.html',{"all_students":all_students	})
 	# return HttpResponse("dfjkhfjk")
 
-def make_email(request,slug):
-	a_teacher = Teachers.objects.get(slug=slug)
-	return render(request,"Admin/Admin_email.html",{"a_teacher":a_teacher})
-	# return HttpResponse(slug)
+def make_email_teacher(request,slug):
+
+	if Teachers.objects.filter(slug=slug).count() == 1:
+		requested = Teachers.objects.get(slug=slug)
+		url = "Admin/Admin_email_teacher.html"
+	else:
+		requested = Students.objects.get(slug=slug)
+		url = "Admin/Admin_email_student.html"
+	return render(request,url,{"a_request":requested})
 
 
 def send_email(request):
