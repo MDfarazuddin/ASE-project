@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path ,include
 from . import views
+from Student import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
+    path('login/',views.Student_login,name='login'),
+    path('<slug:slug>',v.Student_profile,name='profile'),
+    path('logout/',views.logout,name='logout'),
     path('Admin/',include('Admin.urls')),
     path('Teachers/',include('Teacher.urls')),
-    path('Students/',include('Student.urls')),    
+    path('Students/',include('Student.urls')),
 ]

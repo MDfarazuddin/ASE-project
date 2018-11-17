@@ -6,7 +6,10 @@ def Student_profile(request,slug):
 	a_student = Students.objects.get(slug=slug)
 	return render(request,'Student/Student_View.html',{"a_student":a_student})
 	# return HttpResponse(slug)
+
 def Student_courses(request):
+	# a_student = Students.objects.get(slug=slug)
+	# return HttpResponse(slug2)
 	return render(request,'Student/Student_View_Courses.html')
 
 def Student_grade_sheet(request):
