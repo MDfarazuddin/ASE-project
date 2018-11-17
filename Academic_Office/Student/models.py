@@ -6,6 +6,6 @@ class Students(models.Model):
     S_name=models.CharField(max_length=250)
     S_grade = models.CharField(max_length=3,blank=True)
     slug = models.SlugField()
-    S_email = models.EmailField(blank=True,default="farazuddin.m17@iiits.in")
+    S_email = models.EmailField()
     def __str__(self):
     	return self.S_name
