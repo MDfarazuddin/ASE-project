@@ -3,7 +3,9 @@
 {%block content2%}
               <a href="" class = "brand-logo">{{ a_student.S_id }}</a>
 {% endblock %}
-
+{% block content3 %}
+<li><a href="{% url 'logout' %}" class ="btn amber lighten-1 waves-effect">Logout</a></li>
+{% endblock %}
 {%block content%}
           <div class="container">
             <h3 class="center">Welcome {{ a_student.S_name }}</h3>
