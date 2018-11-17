@@ -6,6 +6,13 @@
 {% block content3 %}
 <li><a href="{% url 'logout' %}" class ="btn amber lighten-1 waves-effect">Logout</a></li>
 {% endblock %}
+{% block content4 %}
+<a href="#name"><span class=" name black-text">{{ a_student.S_name }}</span></a>
+<a href="#name"><span class=" name black-text">{{ a_student.S_email }}</span></a>
+{% endblock %}
+{% block content5%}
+<li><a href="{% url 'logout' %}" class="waves-effect btn blue" >Logout</a></li>
+{% endblock %}
 {%block content%}
           <div class="container">
             <h3 class="center">Welcome {{ a_student.S_name }}</h3>
@@ -47,9 +54,6 @@
                   </div>
                   </div>
                 </a>
-
-
-
               </div>
           </div>
 
