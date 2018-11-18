@@ -1,5 +1,8 @@
 {% extends 'Teacher_View_Base_Layout.html' %}
 {% load static from staticfiles %}
+{%block content5%}
+<a href="" class = "brand-logo  ">Course: {{a_teacher.T_course_id.C_name}}</a>
+{%endblock%}
 {%block content2%}
 <li><a href="{% url 'logout2' %}" class ="btn amber lighten-1 waves-effect">Logout</a></li>
 {% endblock %}
@@ -91,7 +94,7 @@
               </div>
                 </a>
 
-                <a href="">
+                <a href="students/{{ a_teacher.slug }}">
                   <div class="col s12 l4">
                     <div class="card  pink accent-3 hoverable">
                       <div class="card-image">
