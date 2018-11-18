@@ -23,6 +23,8 @@ urlpatterns = [
     path('logout1/',views.logout1,name='logout1'),
     path('login2/',views.Teacher_login,name='login2'),
     path('logout2/',views.logout2,name='logout2'),
+    path('login3/',views.Admin_login,name='login3'),
+    path('logout3/',views.logout3,name='logout3'),
     path('Admin/',include('Admin.urls')),
     path('Teachers/',include('Teacher.urls')),
     path('Students/',include('Student.urls')),

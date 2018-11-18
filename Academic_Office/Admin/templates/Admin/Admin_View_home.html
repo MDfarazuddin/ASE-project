@@ -1,5 +1,12 @@
 {% extends 'Admin_View_Base_Layout.html' %}
 {% load static from staticfiles %}
+{%block content1%}
+<li><a href="{% url 'logout3' %}" class ="btn white  black-text waves-effect">Logout</a></li>
+{%endblock%}
+{%block content2%}
+<li><a class="waves-effect" href="{% url 'logout3' %}">Logout</a></li>
+
+{%endblock%}
 {% block content %}
         <div class="container">
             <h3 class="center">Welcome</h3>
@@ -75,6 +82,6 @@
                   </div>
                   </div>
                 </a>
-            </div>     
+            </div>
         </div>
 {% endblock %}
