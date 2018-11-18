@@ -28,7 +28,8 @@
                 <li ><a href="#" class="btn-floating red darken-4 waves-effect"><i class="material-icons blue-text large">person</i></a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">CONTACT</a></li>
-                <li><a href="#" class ="btn amber lighten-1 waves-effect">Login/Logout</a></li>
+                {% block content2 %}
+                {%endblock%}
             </ul>
             </div>
           </nav>
@@ -39,14 +40,16 @@
               <img src="images/office.jpg">
             </div>
             <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-            <a href="#name"><span class="white-text name">John Doe</span></a>
-            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            {%block content4%}
+
+            {%endblock%}
           </div></li>
           <li><a href="#!"><i class="material-icons">home</i>Home</a></li>
           <li><a href="#!">Contact</a></li>
           <li><div class="divider"></div></li>
           <li><a href="#!">About</a></li>
-          <li><a class="waves-effect" href="#!">Logout</a></li>
+          {% block content3 %}
+          {%endblock%}
 
                   </ul>
       {% block content %}
