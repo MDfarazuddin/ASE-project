@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import Login_student
 def home(request):
-	return HttpResponse("Home")
+	return render(request,'Academic_Office/Home_page.html')
 from Student.models import Students
 
 def Student_login(request):
@@ -37,4 +37,4 @@ def Student_login(request):
 def logout(request):
 	del request.session['S_id']
 	del request.session['password']
-	return render(request,'Academic_Office/loginMain.html')
+	return render(request,'Academic_Office/Home_page.html')
