@@ -18,19 +18,18 @@ def Student_login(request):
 					request.session['password'] = db.S_password
 					s='/Students/'+S_id
 					return HttpResponseRedirect(s)
-					#return render(request,'Academic_Office/logged_in.html',{"student":db})
 
 				else:
-					return HttpResponse('Incorrect Password')
+
+					# return HttpResponse('Incorrect Password')
+					return render(request,'Academic_Office/No_password.html')
 			else:
-				return HttpResponse("Username doesn't exist.")
+				return render(request,'Academic_Office/No_user.html')
 		else:
 			return render(request,'Academic_Office/loginMain.html',{'form':form,'errs':form.errors})
 	else:
 		if('S_id' in request.session)&('password' in request.session):
-			# return render(request,'Students/Student_View.html',{"a_student":db})\
 			return render(request,'Academic_Office/logged_in.html',{"student":db})
-			# return render(request,'Academic_Office/Student_View.html',{"a_student":db})
 
 		form=Login_student()
 	return render(request,'Academic_Office/loginMain.html',{'form':form})
@@ -39,4 +38,3 @@ def logout(request):
 	del request.session['S_id']
 	del request.session['password']
 	return render(request,'Academic_Office/loginMain.html')
-	# return HttpResponse("Logged out")
