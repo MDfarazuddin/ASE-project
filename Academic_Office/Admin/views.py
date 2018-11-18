@@ -26,7 +26,7 @@ def admin_add_teacher(request):
                 return render(request,'Admin/Admin_View_Add_Teacher.html',{'form':form,'erru':'User ID already'})
             t=Teachers(slug=form.cleaned_data['T_id'],T_id=form.cleaned_data['T_id'],T_name=form.cleaned_data['T_name'],T_email=form.cleaned_data['T_email'],T_password=form.cleaned_data['password'])
             t.save()
-            return HttpResponse("user is succesfully created!!")
+            return render(request,'Admin/Teacher_created.html')
         else:
             return render(request,'Admin/Admin_View_Add_Teacher.html',{'form':form})
     return render(request,'Admin/Admin_View_Add_Teacher.html',{'form':form})
@@ -49,7 +49,7 @@ def admin_add_student(request):
                 return render(request,'Admin/Admin_View_Add_Student.html',{'form':form,'erru':'User ID already'})
             t=Students(slug=form.cleaned_data['S_id'],S_id=form.cleaned_data['S_id'],S_name=form.cleaned_data['S_name'],S_email=form.cleaned_data['S_email'],S_password=form.cleaned_data['password'])
             t.save()
-            return HttpResponse("user is succesfully created!!")
+            return render(request,'Admin/Teacher_created.html')
         else:
             return render(request,'Admin/Admin_View_Add_Student.html',{'form':form})
     return render(request,'Admin/Admin_View_Add_Student.html',{'form':form})
