@@ -20,19 +20,17 @@ def Student_login(request):
 					return HttpResponseRedirect(s)
 
 				else:
-
-					# return HttpResponse('Incorrect Password')
 					return render(request,'Academic_Office/No_password.html')
 			else:
 				return render(request,'Academic_Office/No_user.html')
 		else:
-			return render(request,'Academic_Office/loginMain.html',{'form':form,'errs':form.errors})
+			return render(request,'Academic_Office/login_student.html',{'form':form,'errs':form.errors})
 	else:
 		if('S_id' in request.session)&('password' in request.session):
 			return render(request,'Academic_Office/logged_in.html',{"student":db})
 
 		form=Login_student()
-	return render(request,'Academic_Office/loginMain.html',{'form':form})
+	return render(request,'Academic_Office/login_student.html',{'form':form})
 
 def logout(request):
 	del request.session['S_id']
