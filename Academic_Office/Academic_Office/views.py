@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import Login_student,Login_teacher,Login_admin
-def home(request):
-	return render(request,'Academic_Office/Home_page.html')
 from Student.models import Students
 from Teacher.models import Teachers
 from Admin.models import Admins
 
+def home(request):
+	return render(request,'Academic_Office/Home_page.html')
+	
 def Student_login(request):
 	form = Login_student()
 	if request.method == 'POST':

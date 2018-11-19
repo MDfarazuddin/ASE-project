@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from Teacher.models import Teachers
-from Student.models import Students
+from Student.models import Students,Courses
 from django.core.mail import EmailMessage
 from .forms import Register_student,Register_teacher
 # Create your views here.
-
+course = Courses.objects.get(C_id = '000')
 def admin_home(request):
 	return render(request,'Admin/Admin_View_home.html')
 
@@ -24,7 +24,7 @@ def admin_add_teacher(request):
                 return render(request,'Admin/Admin_View_Add_Teacher.html',{'form':form,'errp':'password not matched'})
             if Teachers.objects.filter(T_id=form.cleaned_data['T_id'].lower()).count()==1:
                 return render(request,'Admin/Admin_View_Add_Teacher.html',{'form':form,'erru':'User ID already'})
-            t=Teachers(slug=form.cleaned_data['T_id'],T_id=form.cleaned_data['T_id'],T_name=form.cleaned_data['T_name'],T_email=form.cleaned_data['T_email'],T_password=form.cleaned_data['password'])
+            t=Teachers(slug=form.cleaned_data['T_id'],T_id=form.cleaned_data['T_id'],T_name=form.cleaned_data['T_name'],T_email=form.cleaned_data['T_email'],T_password=form.cleaned_data['password'],T_course_id=course)
             t.save()
             return render(request,'Admin/Teacher_created.html')
         else:
@@ -49,7 +49,7 @@ def admin_add_student(request):
                 return render(request,'Admin/Admin_View_Add_Student.html',{'form':form,'erru':'User ID already'})
             t=Students(slug=form.cleaned_data['S_id'],S_id=form.cleaned_data['S_id'],S_name=form.cleaned_data['S_name'],S_email=form.cleaned_data['S_email'],S_password=form.cleaned_data['password'])
             t.save()
-            return render(request,'Admin/Teacher_created.html')
+            return render(request,'Admin/Student_created.html')
         else:
             return render(request,'Admin/Admin_View_Add_Student.html',{'form':form})
     return render(request,'Admin/Admin_View_Add_Student.html',{'form':form})
